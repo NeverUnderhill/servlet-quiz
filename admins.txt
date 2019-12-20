@@ -1,0 +1,2 @@
+admin1|sifra1
+admin2|sifra2

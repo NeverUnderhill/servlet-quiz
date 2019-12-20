@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<link rel="stylesheet" href="login.css">
+		<script src="functions.js" charset="utf-8"></script>
+	</head>
+	<body>
+		<div align="center">
+			<form action="<%=request.getContextPath()%>/login" method="post">
+				<label for="username">Username: </label>
+				<input type="text" id="uname" name="username">
+				<label for="password">Password: </label>
+				<input type="password" id="paswd" password="password">
+				<input type="button" value="Log In" onclick="user_login('uname', 'paswd')">
+			</form>
+			<button type="registerButton" class="myButton" onclick=" ">Register</button>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<!DOCTYPE web-app
+PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+"http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+    <display-name>Quiz</display-name>
+    <request-character-encoding>UTF-8</request-character-encoding>
+    <description>
+        Quiz app
+    </description>
+
+    <servlet>
+        <servlet-name>admin</servlet-name>
+        <servlet-class>Admin</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>admin</servlet-name>
+        <url-pattern>/admin</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>loginAdmin</servlet-name>
+        <servlet-class>LoginAdmin</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>loginAdmin</servlet-name>
+        <url-pattern>/projectrwa/loginAdmin</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>loginEditor</servlet-name>
+        <servlet-class>LoginEditor</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>loginEditor</servlet-name>
+        <url-pattern>/projectrwa/loginEditor</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>loginUser</servlet-name>
+        <servlet-class>LoginUser</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>loginUser</servlet-name>
+        <url-pattern>/projectrwa/loginUser</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>addQuiz</servlet-name>
+        <servlet-class>AddQuiz</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>addQuiz</servlet-name>
+        <url-pattern>/projectrwa/editor/addQuiz</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>getEditorQuizzes</servlet-name>
+        <servlet-class>GetEditorQuizzes</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>getEditorQuizzes</servlet-name>
+        <url-pattern>/projectrwa/editor/getEditorQuizzes</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>deleteEditorsQuiz</servlet-name>
+        <servlet-class>DeleteEditorsQuiz</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>deleteEditorsQuiz</servlet-name>
+        <url-pattern>/projectrwa/editor/deleteEditorsQuiz</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>editEditorsQuiz</servlet-name>
+        <servlet-class>EditEditorsQuiz</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>editEditorsQuiz</servlet-name>
+        <url-pattern>/projectrwa/editor/editEditorsQuiz</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>getQuizzesQuestions</servlet-name>
+        <servlet-class>GetQuizzesQuestions</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>getQuizzesQuestions</servlet-name>
+        <url-pattern>/projectrwa/editor/getQuizzesQuestions</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>selectQuestion</servlet-name>
+        <servlet-class>SelectQuestion</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>selectQuestion</servlet-name>
+        <url-pattern>/projectrwa/editor/selectQuestion</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>loadAnswers</servlet-name>
+        <servlet-class>LoadAnswers</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>loadAnswers</servlet-name>
+        <url-pattern>/projectrwa/editor/loadAnswers</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>addQuestion</servlet-name>
+        <servlet-class>AddQuestion</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>addQuestion</servlet-name>
+        <url-pattern>/projectrwa/editor/addQuestion</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>editQuestion</servlet-name>
+        <servlet-class>EditQuestion</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>editQuestion</servlet-name>
+        <url-pattern>/projectrwa/editor/editQuestion</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>deleteQuestion</servlet-name>
+        <servlet-class>DeleteQuestion</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>deleteQuestion</servlet-name>
+        <url-pattern>/projectrwa/editor/deleteQuestion</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>loadQuestion</servlet-name>
+        <servlet-class>LoadQuestion</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>loadQuestion</servlet-name>
+        <url-pattern>/projectrwa/user/loadQuestion</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>initQuiz</servlet-name>
+        <servlet-class>InitQuiz</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>initQuiz</servlet-name>
+        <url-pattern>/projectrwa/user/initQuiz</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>registerEditor</servlet-name>
+        <servlet-class>RegisterEditor</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>registerEditor</servlet-name>
+        <url-pattern>/projectrwa/registerEditor</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>getRandomQuiz</servlet-name>
+        <servlet-class>GetRandomQuiz</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>getRandomQuiz</servlet-name>
+        <url-pattern>/projectrwa/getRandomQuiz</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>saveScore</servlet-name>
+        <servlet-class>SaveScore</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>saveScore</servlet-name>
+        <url-pattern>/projectrwa/user/saveScore</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>getResults</servlet-name>
+        <servlet-class>GetResults</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>getResults</servlet-name>
+        <url-pattern>/projectrwa/editor/getResults</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>swapQuestions</servlet-name>
+        <servlet-class>SwapQuestions</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>swapQuestions</servlet-name>
+        <url-pattern>/projectrwa/editor/swapQuestions</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>multiPartServlet</servlet-name>
+        <servlet-class>MultipartServlet</servlet-class>
+        <multipart-config>
+            <max-file-size>20848820</max-file-size>
+            <max-request-size>418018841</max-request-size>
+            <file-size-threshold>1048576</file-size-threshold>
+        </multipart-config>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>multiPartServlet</servlet-name>
+        <url-pattern>/projectrwa/editor/multiPartServlet</url-pattern>
+    </servlet-mapping>
+</web-app>

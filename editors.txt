@@ -1,0 +1,2 @@
+editor1|sifra1
+editor2|sifra2
