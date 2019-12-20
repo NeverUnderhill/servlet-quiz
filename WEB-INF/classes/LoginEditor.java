@@ -34,18 +34,12 @@ public class LoginEditor extends HttpServlet {
                     }
                 }
 
-                PrintWriter out = response.getWriter();
-                response.setContentType("text/plain");
-                response.setCharacterEncoding("UTF-8");
-                String resp;
                 if(exists){
-                    resp = "correcc";
+                    response.sendRedirect(request.getContextPath() + "/projectrwa/editor/");
                 }
                 else{
-                    resp = "not correcc";
+                    response.sendRedirect(request.getContextPath() + "/projectrwa/editor_register_fail.html");
                 }
-                out.print(resp);
-                out.flush();
             }
             catch(SQLException e){
                 e.printStackTrace();

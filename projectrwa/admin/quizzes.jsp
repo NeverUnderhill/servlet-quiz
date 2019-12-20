@@ -6,7 +6,6 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<link rel="stylesheet" href="../style.css" type="text/css" media="screen" title="no title" charset="utf-8">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<script src="../functions.js" charset="utf-8"></script>
 		<script src="./adminFunctions.js" charset="utf-8"></script>
 
 		<title>View Quizess</title>  
@@ -25,7 +24,7 @@
 							<a class="nav-link" href="index.jsp">Editors<span class="sr-only">(current)</span></a>
 						</li>
 						<li class="nav-item active">
-                            <a class="nav-link" href="quizzes.jsp">Quizzes<span class="sr-only">(current)</span></a>
+							<a class="nav-link" href="quizzes.jsp">Quizzes<span class="sr-only">(current)</span></a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="logout.jsp">Log out</a>
@@ -48,14 +47,15 @@
 		</div>
 		<div class="container">
 			<div class="row justify-content-center">
-				<h1 id="title">Editors List</h1>  
+				<h1 id="title">Quizess List</h1>  
 			</div>
 			<div class="row" style="text-align:center">
- 				<table class="table col-6" id="editorsTable">  
+ 				<table class="table col-6" id="quizzesTable">  
 					<thead>
 						<tr>
 							<th scope="col">#</th>
 							<th scope="col">Name</th>
+							<th scope="col">Editor</th>
 							<th scope="col">Action</th>
 						</tr>
 					</thead>
@@ -63,18 +63,24 @@
 						<tr>
 							<td>Number</td>
 							<td>Title</td>  
+							<td>Editor</td>  
 							<td>
+								<button type="button" class="btn btn-success"
+													  onclick="editQuiz(this.parentNode.parentNode.rowIndex - 1)"><i class="fa fa-pencil"></i></button>
 								<button type="button" class="btn btn-danger"
-													  onclick="deleteEditor(this.parentNode.parentNode.children[1].innerHTML);location.reload();"><i class="fa fa-trash"></i></button>
+													  onclick="deleteQuiz(this.parentNode.parentNode.rowIndex - 1);location.reload();"><i class="fa fa-trash"></i></button>
 							</td>
 						</tr>  
 					</tbody>
 				</table>  
 			</div>
+			<div class="row justify-content-center">
+				<button type="button" class="btn btn-primary mx-1" onclick="window.location.href = 'addquiz.jsp'">Add quiz</button>
+			</div>
 		</div>
 		<br/>
 		<script charset="utf-8">
-			getEditors();
+			getQuizzes();
 		</script>
 	</body>  
 </html>  

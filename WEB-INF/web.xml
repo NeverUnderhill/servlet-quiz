@@ -251,4 +251,44 @@ PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
         <servlet-name>multiPartServlet</servlet-name>
         <url-pattern>/projectrwa/editor/multiPartServlet</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>getEditors</servlet-name>
+        <servlet-class>GetEditors</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>getEditors</servlet-name>
+        <url-pattern>/projectrwa/admin/getEditors</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>deleteEditor</servlet-name>
+        <servlet-class>DeleteEditor</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>deleteEditor</servlet-name>
+        <url-pattern>/projectrwa/admin/deleteEditor</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>getQuizzes</servlet-name>
+        <servlet-class>GetQuizzes</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>getQuizzes</servlet-name>
+        <url-pattern>/projectrwa/admin/getQuizzes</url-pattern>
+    </servlet-mapping>
+
+    <filter>
+        <filter-name>AdminFilter</filter-name>
+        <filter-class>AdminFilter</filter-class> <!-- mandatory -->
+    </filter>
+
+    <filter-mapping>
+      <filter-name>AdminFilter</filter-name> <!-- mandatory -->
+      <url-pattern>/projectrwa/admin/*</url-pattern> 
+    </filter-mapping>
 </web-app>
