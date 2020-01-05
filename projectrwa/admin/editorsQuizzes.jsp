@@ -6,7 +6,8 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<link rel="stylesheet" href="../style.css" type="text/css" media="screen" title="no title" charset="utf-8">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<script src="../functions.js" charset="utf-8"></script>
+		<script src="./adminFunctions.js" charset="utf-8"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
 
 		<title>View Quizess</title>  
 	</head>  
@@ -21,10 +22,10 @@
 				<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
 					<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 						<li class="nav-item active">
-							<a class="nav-link" href="index.jsp">Quizzes<span class="sr-only">(current)</span></a>
+							<a class="nav-link" href="index.jsp">Editors<span class="sr-only">(current)</span></a>
 						</li>
 						<li class="nav-item active">
-							<a class="nav-link" href="results.jsp">Results<span class="sr-only">(current)</span></a>
+							<a class="nav-link" href="quizzes.jsp">Quizzes<span class="sr-only">(current)</span></a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="logout.jsp">Log out</a>
@@ -32,14 +33,14 @@
 						<li class="nav-item">
 							<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
                             <i class="fa fa-edit"></i>
-                            <%out.print(" " + session.getAttribute("id"));
+                            <%out.print(" " + session.getAttribute("admin"));
                             %>
                             </a>
 						</li>
 					</ul>
 					<form class="form-inline my-2 my-lg-0">
-						<input class="form-control mr-sm-2" type="search" placeholder="Search">
-						<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        <a class="nav-link disabled" href="#" id="editor" tabindex="-1" aria-disabled="true">
+                        </a>
 					</form>
 				</div>
 			</nav>
@@ -47,42 +48,35 @@
 		</div>
 		<div class="container">
 			<div class="row justify-content-center">
-				<h1 id="title">RESULTS LIST</h1>  
+				<h1 id="title">Quizess List</h1>  
 			</div>
 			<div class="row" style="text-align:center">
- 				<table class="table col-6" id="resultsTable">  
+ 				<table class="table col-6" id="quizzesTable">  
 					<thead>
 						<tr>
 							<th scope="col">#</th>
 							<th scope="col">Name</th>
-							<th scope="col">Email</th>
-							<th scope="col">Quiz</th>
-							<th scope="col">Score</th>
-							<th scope="col">Delete</th>
+							<th scope="col">Action</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
-							<td></td>
-							<td></td>  
-							<td></td>  
-							<td></td>  
+							<td>Number</td>
+							<td>Title</td>  
 							<td>
-                                <span class="badge badge-primary"></span>
-                            </td>  
-							<td>
-								<button type="button" class="btn btn-danger" onclick="deleteResult(this.parentNode.parentNode.rowIndex - 1);location.reload();"><i class="fa fa-trash"></i></button>
+								<button type="button" class="btn btn-danger"
+													  onclick="deleteQuiz(this.parentNode.parentNode.getAttribute('quizID'));location.reload();"><i class="fa fa-trash"></i></button>
 							</td>
 						</tr>  
 					</tbody>
 				</table>  
 			</div>
-			<div class="row justify-content-center">
-				<button type="button" class="btn btn-primary mx-1" onclick="saveResults()">Save</button>
-			</div>
 		</div>
-		<script charset="utf-8">
-			getResults();
+		<br/>
+		<script charset="utf-8" type="text/javascript">
+            let editor = window.localStorage.getItem("editor");
+            document.getElementById("editor").innerHTML = editor;
+			getQuizzes(editor);
 		</script>
 	</body>  
 </html>  

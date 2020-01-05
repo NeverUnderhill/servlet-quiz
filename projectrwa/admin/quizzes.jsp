@@ -65,17 +65,12 @@
 							<td>Title</td>  
 							<td>Editor</td>  
 							<td>
-								<button type="button" class="btn btn-success"
-													  onclick="editQuiz(this.parentNode.parentNode.rowIndex - 1)"><i class="fa fa-pencil"></i></button>
 								<button type="button" class="btn btn-danger"
-													  onclick="deleteQuiz(this.parentNode.parentNode.rowIndex - 1);location.reload();"><i class="fa fa-trash"></i></button>
+													  onclick="deleteQuiz(this.parentNode.parentNode.getAttribute('quizID'));location.reload();"><i class="fa fa-trash"></i></button>
 							</td>
 						</tr>  
 					</tbody>
 				</table>  
-			</div>
-			<div class="row justify-content-center">
-				<button type="button" class="btn btn-primary mx-1" onclick="window.location.href = 'addquiz.jsp'">Add quiz</button>
 			</div>
 		</div>
 		<br/>

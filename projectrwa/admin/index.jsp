@@ -38,10 +38,6 @@
                             </a>
 						</li>
 					</ul>
-					<form class="form-inline my-2 my-lg-0">
-						<input class="form-control mr-sm-2" type="search" placeholder="Search">
-						<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-					</form>
 				</div>
 			</nav>
 
@@ -60,12 +56,12 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
+						<tr onclick="window.localStorage.setItem('editor', this.children[1].innerHTML); window.location.href = 'editorsQuizzes.jsp'">
 							<td>Number</td>
 							<td>Title</td>  
 							<td>
 								<button type="button" class="btn btn-danger"
-													  onclick="deleteEditor(this.parentNode.parentNode.children[1].innerHTML);location.reload();"><i class="fa fa-trash"></i></button>
+													  onclick="deleteEditor(event, this.parentNode.parentNode.children[1].innerHTML);location.reload();"><i class="fa fa-trash"></i></button>
 							</td>
 						</tr>  
 					</tbody>

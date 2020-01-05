@@ -8,9 +8,7 @@ import java.util.ArrayList;
 import com.google.gson.Gson;
 
 
-public class GetQuizzes extends HttpServlet {
-    private String message;
-
+public class DeleteQuiz extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException{
             try{
@@ -27,31 +25,13 @@ public class GetQuizzes extends HttpServlet {
                 con = DriverManager.getConnection(url, user, password);
                 stmt = con.createStatement();
 
-                String editor = (String) request.getParameter("editor");
-                String query;
-                if(editor != null) {
-                    query = "select * from quizzes where editor = \"" + editor +"\";";
-                }
-                else{
-                    query = "select * from quizzes;";
-                }
-                ResultSet rs = stmt.executeQuery(query);
-
-                List<EditorQuizData> quizzes = new ArrayList<>();
-                rs.next();
-                while(true){
-                    if(rs.isAfterLast())
-                        break;
-                    quizzes.add(new EditorQuizData(rs.getString("id"), rs.getString("name"), rs.getString("editor")));
-                    rs.next();
-                }
-
-                String editorQuizDataJson = new Gson().toJson(quizzes);
+                String id = request.getParameter("quizID");
+                stmt.executeQuery("delete from quizzes where id = '" + id + "';");
 
                 PrintWriter out = response.getWriter();
                 response.setContentType("application/json");
                 response.setCharacterEncoding("UTF-8");
-                out.print(editorQuizDataJson);
+                out.print("correcc");
                 out.flush();
             }
             catch(SQLException e){

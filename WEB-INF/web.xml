@@ -282,6 +282,16 @@ PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
         <url-pattern>/projectrwa/admin/getQuizzes</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>deleteQuiz</servlet-name>
+        <servlet-class>DeleteQuiz</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>deleteQuiz</servlet-name>
+        <url-pattern>/projectrwa/admin/deleteQuiz</url-pattern>
+    </servlet-mapping>
+
     <filter>
         <filter-name>AdminFilter</filter-name>
         <filter-class>AdminFilter</filter-class> <!-- mandatory -->
